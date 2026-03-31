@@ -95,8 +95,4 @@ exercises/
 └── 03-team-task-board/
     ├── README.md
     └── starter/
-
-_instructor/             ← coach reference material (not for students)
-├── solution-notes/
-└── concept-ladder.md
 ```

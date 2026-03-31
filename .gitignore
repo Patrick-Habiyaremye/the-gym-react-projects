@@ -1,0 +1,36 @@
+# Dependencies — each exercise has its own node_modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# Editor and OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Instructor material — kept locally, not pushed to the student-facing repo
+_instructor/

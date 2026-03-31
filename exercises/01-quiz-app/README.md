@@ -49,8 +49,8 @@ npm install
 npm run dev
 ```
 
-The app renders a placeholder line. Everything else is yours to build.
-You can create as many component files as you want inside `src/`.
+The app renders a complete static UI — run it first to see what you're building.
+Your job is to make it interactive. You can create as many component files as you want inside `src/`.
 
 ---
 

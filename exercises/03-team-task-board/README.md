@@ -22,7 +22,7 @@ The team member data is in `src/data/team.js`. Each member has an `id`, `name`, 
 6. Filter controls let the user view tasks by assignee and/or by priority — both filters must work together
 7. **Task state is managed with `useReducer`** — you decide the action types, but they must be documented in a comment at the top of your reducer file
 8. **The state is shared via React Context** — no component may receive task data or dispatch through props; all components access the context directly
-9. `useState` must not be used for task data anywhere in the app
+9. The task list must be managed exclusively with `useReducer` — `useState` must not hold tasks or any individual task object
 
 ---
 
@@ -40,7 +40,8 @@ npm install
 npm run dev
 ```
 
-The app renders a placeholder line showing team member count. Everything else is yours to build — component structure, file layout, and context design are all your decisions.
+The app renders a complete static UI — run it first to see what you're building.
+Component structure, file layout, and context design are all your decisions.
 
 ---
 
