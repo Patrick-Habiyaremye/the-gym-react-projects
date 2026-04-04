@@ -12,6 +12,7 @@ export default function App() {
   const [selectedAnswered, setSelectedAnswered] = useState(null)
   const [answered, setAnswered] = useState(false)
   const [score, setScore] = useState(0)
+  const [showResult, setShowResult] = useState(false)
 
 const question = questions[index]
 //console.log(question)
@@ -26,10 +27,33 @@ const handleSelect = (i) =>{
 }
 
 const handleNextClick = () =>{
+  if(index + 1 < questions.length){
     setAnswered(false)
     setSelectedAnswered(null)
     setIndex( index + 1)
+  }else{
+    setShowResult(true)
+  }}
+
+    const handleReset = () =>{
+    setIndex(0)
+    setSelectedAnswered(null)
+    setAnswered(false)
+    setScore(0)
+    setShowResult(false)
   }
+
+  if(showResult){
+      return(
+        <div className="flex min-h-screen items-center justify-center">
+          <div className="text-centet">
+            <h1 className="text-2xl font-bold mb-4">Final Score: {score} out of {questions.length}</h1>
+            <button onClick={handleReset} className="text-white text-2xl font-bold text-center bg-blue-500 px-4 py-2 rounded">Play Again</button>
+          </div>
+        </div>
+      )
+  }
+
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 w-full max-w-lg">
