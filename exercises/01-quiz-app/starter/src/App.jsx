@@ -46,25 +46,20 @@ const handleNextClick = () =>{
   }
 
   // Render result screen when quiz is finished
-  if(showResult){
-    // change result color based on performance
-    let styles = "border-grey-200"
-    if(score >= 5){
-      styles = "bg-green-500"
-    }else{
-      styles = "bg-red-500"
-    }
-      return(
+  const results = (
         <div className="flex min-h-screen items-center justify-center">
           <div className="text-centet">
-            <h1 className="text-2xl text-blue-500 font-bold mb-4">Final Score: {score} out of {questions.length}</h1>
-            <button onClick={handleReset} className={`text-white text-2xl font-bold text-center bg-blue-500 px-4 py-2 rounded ${styles}`}>Play Again</button>
+            <h1 className='text-2xl mb-5'><b>Quiz Complete 🥳 </b></h1>
+            <h1 className="text-2xl text-blue-500 font-bold mb-6">Your score: {score} / {questions.length}</h1>
+            <button onClick={handleReset} className={`text-white text-2xl font-bold text-center bg-blue-500 px-4 py-2 rounded ${score >= 5 ? "bg-green-500" : "bg-red-500"}`}>Restart</button>
           </div>
         </div>
       )
-  }
 
+  // conditional rendering applied
   return (
+    <>
+    { showResult ? ( results ) : (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 w-full max-w-lg">
 
@@ -116,5 +111,6 @@ const handleNextClick = () =>{
         )}
       </div>
     </div>
-  )
+)}
+  </>)
 }
